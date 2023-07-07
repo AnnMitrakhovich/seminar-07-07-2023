@@ -1,23 +1,38 @@
 ﻿// Задача 64: Задайте значение N. Напишите программу, которая выведет все натуральные числа в промежутке от N до 1. Выполнить с помощью рекурсии.
 // N = 5 -> "5, 4, 3, 2, 1"
 // N = 8 -> "8, 7, 6, 5, 4, 3, 2, 1"
+// int InputNum(string message)
+// {
+//     Console.Write(message);
+//     return Convert.ToInt32(Console.ReadLine()!);
+// }
+// void PrintNumbers(int start, int end)
+// {
+//     if (start > end) return;
+//     PrintNumbers(start + 1, end);
+//     Console.Write(start + " ");
+// }
+// int num = InputNum("Введите целое число N: ");
+// PrintNumbers(1, num);
+
+// Задача 66: Задайте значения M и N. Напишите программу, которая найдёт сумму натуральных элементов в промежутке от M до N.
+// M = 1; N = 15 -> 120
+// M = 4; N = 8. -> 30
 int InputNum(string message)
 {
     Console.Write(message);
     return Convert.ToInt32(Console.ReadLine()!);
 }
-void PrintNumbers(int start, int end)
+int SumNumbers(int m, int n)
 {
-    if (start > end) return;
-    PrintNumbers(start + 1, end);
-    Console.Write(start + " ");
+    if (m > n) return 0;
+    return m + SumNumbers(m + 1, n);
 }
-int num = InputNum("Введите целое число N: ");
-PrintNumbers(1, num);
+int numM = InputNum("Введите начало интервала: ");
+int numN = InputNum("Введите конец интервала: ");
+int sum = SumNumbers(numM, numN);
+Console.WriteLine($"Сумма чисел от {numM} до {numN} равна {sum}.");
 
-// Задача 66: Задайте значения M и N. Напишите программу, которая найдёт сумму натуральных элементов в промежутке от M до N.
-// M = 1; N = 15 -> 120
-// M = 4; N = 8. -> 30
 
 // Задача 68: Напишите программу вычисления функции Аккермана с помощью рекурсии. Даны два неотрицательных числа m и n.
 // m = 2, n = 3 -> A(m,n) = 9
