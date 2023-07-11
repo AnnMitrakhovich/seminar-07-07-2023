@@ -18,25 +18,41 @@
 // Задача 66: Задайте значения M и N. Напишите программу, которая найдёт сумму натуральных элементов в промежутке от M до N.
 // M = 1; N = 15 -> 120
 // M = 4; N = 8. -> 30
-int InputNum(string message)
-{
-    Console.Write(message);
-    return Convert.ToInt32(Console.ReadLine()!);
-}
-int SumNumbers(int m, int n)
-{
-    if (m > n) return 0;
-    return m + SumNumbers(m + 1, n);
-}
-int numM = InputNum("Введите начало интервала: ");
-int numN = InputNum("Введите конец интервала: ");
-int sum = SumNumbers(numM, numN);
-Console.WriteLine($"Сумма чисел от {numM} до {numN} равна {sum}.");
-
+// int InputNum(string message)
+// {
+//     Console.Write(message);
+//     return Convert.ToInt32(Console.ReadLine()!);
+// }
+// int SumNumbers(int m, int n)
+// {
+//     if (m > n) return 0;
+//     return m + SumNumbers(m + 1, n);
+// }
+// int numM = InputNum("Введите начало интервала: ");
+// int numN = InputNum("Введите конец интервала: ");
+// int sum = SumNumbers(numM, numN);
+// Console.WriteLine($"Сумма чисел от {numM} до {numN} равна {sum}.");
 
 // Задача 68: Напишите программу вычисления функции Аккермана с помощью рекурсии. Даны два неотрицательных числа m и n.
 // m = 2, n = 3 -> A(m,n) = 9
 // m = 3, n = 2 -> A(m,n) = 29
+// int InputNum(string message)
+// {
+//     Console.Write(message);
+//     return Convert.ToInt32(Console.ReadLine()!);
+// }
+// int Ack(int n, int m)
+// {
+//     if (m == 0) return n + 1;
+//     if (n == 0) return Ack(m - 1, 1);
+//     return Ack(m - 1, Ack(m, n - 1));
+// }
+// int numM = InputNum("Введите m: ");
+// int numN = InputNum("Введите n: ");
+// int ackerman = Ack(numM, numN);
+// Console.WriteLine($"Функция Аккермана равна {ackerman}.");
+//  для А (1, 1) мой ноут уже выдает Stack overflow.
+
 
 // Задача 69: Напишите программу, которая на вход принимает два числа A и B, и возводит число А в целую степень B с помощью рекурсии.
 // A = 3; B = 5 -> 243 (3⁵)
